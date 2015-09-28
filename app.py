@@ -29,10 +29,6 @@ def form():
 @app.route('/hello/', methods=['GET', 'POST'])
 def hello():
     data = {"names": ["John", "Jacob", "Julie", "Jennifer"]}
-    print "\nData Recieved ->",
-    print request.json
-    print "\nBody Recieved ->",
-    print request.data
     name=request.form['yourname']
     email=request.form['youremail']
     return render_template('form_action.html', name=name, email=email)
