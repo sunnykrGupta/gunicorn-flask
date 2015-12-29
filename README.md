@@ -1,10 +1,10 @@
 # gunicorn-flask
 Gunicorn with app server "Flask"
 
-sudo apt-get update
-```py
-$ sudo apt-get install -y python python-pip python-virtualenv gunicorn
 
+```py
+$ sudo apt-get update
+$ sudo apt-get install -y python python-pip python-virtualenv gunicorn
 $ sudo yum -y python python-pip python-virtualenv gunicorn
 ```
 
@@ -22,3 +22,5 @@ Install the requirements:
 ```
 $ sudo pip install Flask==0.10.1
 ```
+
+Source : [https://realpython.com/blog/python/kickstarting-flask-on-ubuntu-setup-and-deployment/](https://realpython.com/blog/python/kickstarting-flask-on-ubuntu-setup-and-deployment/)
