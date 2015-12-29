@@ -14,11 +14,11 @@
                 <h1>Flask code</h1>
             </div>
                 <code><pre>
-@app.route('/hello/', methods=['POST'])
-def hello():
-    name=request.form['yourname']
-    email=request.form['youremail']
-    return render_template('form_action.html', name=name, email=email)
+                    @app.route('/hello/', methods=['POST'])
+                    def hello():
+                        name=request.form['yourname']
+                        email=request.form['youremail']
+                        return render_template('form_action.html', name=name, email=email)
                 </pre></code>
             </div>
         </div>

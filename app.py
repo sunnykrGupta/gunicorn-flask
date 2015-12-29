@@ -1,11 +1,15 @@
 from flask import Flask, jsonify, render_template,\
 request, url_for, request, Response
+import requests
+import ss2
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
+    print request.headers
+    #print request.remote_addr
     return render_template('redr.html')
 
 @app.route('/page')
@@ -34,6 +38,33 @@ def hello():
     return render_template('form_action.html', name=name, email=email)
     #return "Data passed"
 
+
+
+@app.route('/cap')
+def cap():
+    #print request.headers
+    return render_template('index.html')
+
+
+@app.route('/capsolve', methods=['POST'])
+def capsolve():
+    dict_data = {"names": ["John", "Jacob", "Julie", "Jennifer"]}
+    frm = request.form
+
+    print type(frm)
+    print "--------Data from google--------"
+    print frm
+
+    google_cap_data = {
+        "secret" : "6Lf9KA4TAAAAAGLFYivqkNud4sLAQO5wwadBx4lP",
+        "response"  :   frm['g-recaptcha-response'],
+        "remoteip"  :   request.remote_addr
+    }
+
+    google_cap_api_url = "https://www.google.com/recaptcha/api/siteverify"
+    res = requests.post(google_cap_api_url, data = google_cap_data)
+    print res.text
+    return "True"
 
 if __name__ == '__main__':
     app.run()
