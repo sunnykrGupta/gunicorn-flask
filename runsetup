@@ -1,8 +1,12 @@
 
 echo "updater"
 #```py
+#ubuntu
 sudo apt-get install -y python python-pip python-virtualenv gunicorn
-sudo yum -y python python-pip python-virtualenv gunicorn
+
+#centos 
+sudo yum -y python python-pip python-virtualenv
+pip install gunicorn
 #```
 
 echo "Set up Flask
@@ -16,4 +20,5 @@ sudo virtualenv env
 source env/bin/activate
 
 echo "Install the Flask:"
-sudo pip install Flask==0.10.1
+sudo pip install Flask==0.10.1 
+sudo pip install requests
