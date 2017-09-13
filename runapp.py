@@ -1,6 +1,6 @@
 
 
-import requests
+import requests, time
 
 from flask import Flask, request, Response
 from flask import render_template, url_for, redirect, send_from_directory

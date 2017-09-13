@@ -22,3 +22,4 @@ source env/bin/activate
 echo "Install the Flask:"
 sudo pip install Flask==0.10.1
 sudo pip install requests
+sudo pip install -U flask-cors
